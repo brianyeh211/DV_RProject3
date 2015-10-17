@@ -45,9 +45,14 @@ summary(career_center)
 
 ```
   
-###Subset of dataframe joining farmers markets and career centers in New York by Zip code: Where County = Queens
+###Subset of dataframe joining farmers markets and Wastewater in New York by Zip code: Only shows Zip codes that have both farmers markets and wastewater facilities
 ```{r}
 
+career_farmers <- dplyr::inner_join(df_Farmers, df_Wastewater, by = "Zip_Code")
+career_farmers <- data.frame(career_farmers)
+
+career_farmers.sub <- subset(career_farmers)
+career_farmers.sub
 
 ```
   

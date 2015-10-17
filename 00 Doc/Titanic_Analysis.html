@@ -202,8 +202,463 @@ img {
 ##              
 ## </code></pre>
 </div>
-<div id="subset-of-dataframe-joining-farmers-markets-and-career-centers-in-new-york-by-zip-code-where-county-queens" class="section level3">
-<h3>Subset of dataframe joining farmers markets and career centers in New York by Zip code: Where County = Queens</h3>
+<div id="subset-of-dataframe-joining-farmers-markets-and-wastewater-in-new-york-by-zip-code-only-shows-zip-codes-that-have-both-farmers-markets-and-wastewater-facilities" class="section level3">
+<h3>Subset of dataframe joining farmers markets and Wastewater in New York by Zip code: Only shows Zip codes that have both farmers markets and wastewater facilities</h3>
+<pre class="r"><code>career_farmers &lt;- dplyr::inner_join(df_Farmers, df_Wastewater, by = &quot;Zip_Code&quot;)
+career_farmers &lt;- data.frame(career_farmers)
+
+career_farmers.sub &lt;- subset(career_farmers)
+career_farmers.sub</code></pre>
+<pre><code>##                         Farmers_Market_Name
+## 1              Fort Greene Park Greenmarket
+## 2     Greenpoint/ McCarren Park Greenmarket
+## 3     Greenpoint/ McCarren Park Greenmarket
+## 4                   Sunset Park Greenmarket
+## 5   Harvest Home West Harlem Farmers Market
+## 6        Hamilton Heights Green Youthmarket
+## 7  Bushwick Farmers Market at Make the Road
+## 8  Bushwick Farmers Market at Make the Road
+## 9  Bushwick Farmers Market at Make the Road
+## 10 Bushwick Farmers Market at Make the Road
+## 11 Bushwick Farmers Market at Make the Road
+## 12 Bushwick Farmers Market at Make the Road
+## 13 Bushwick Farmers Market at Make the Road
+## 14 Bushwick Farmers Market at Make the Road
+## 15 Bushwick Farmers Market at Make the Road
+## 16 Bushwick Farmers Market at Make the Road
+## 17 Bushwick Farmers Market at Make the Road
+## 18 Bushwick Farmers Market at Make the Road
+## 19 Bushwick Farmers Market at Make the Road
+## 20 Bushwick Farmers Market at Make the Road
+## 21 Bushwick Farmers Market at Make the Road
+## 22 Bushwick Farmers Market at Make the Road
+## 23 Bushwick Farmers Market at Make the Road
+## 24 Bushwick Farmers Market at Make the Road
+## 25 Bushwick Farmers Market at Make the Road
+## 26 Bushwick Farmers Market at Make the Road
+## 27 Bushwick Farmers Market at Make the Road
+## 28 Bushwick Farmers Market at Make the Road
+## 29 Bushwick Farmers Market at Make the Road
+## 30 Bushwick Farmers Market at Make the Road
+## 31 Bushwick Farmers Market at Make the Road
+## 32 Bushwick Farmers Market at Make the Road
+## 33 Bushwick Farmers Market at Make the Road
+## 34 Bushwick Farmers Market at Make the Road
+## 35 Bushwick Farmers Market at Make the Road
+## 36 Bushwick Farmers Market at Make the Road
+## 37 Bushwick Farmers Market at Make the Road
+## 38 Bushwick Farmers Market at Make the Road
+## 39 Bushwick Farmers Market at Make the Road
+## 40 Bushwick Farmers Market at Make the Road
+## 41 Bushwick Farmers Market at Make the Road
+## 42 Bushwick Farmers Market at Make the Road
+## 43 Bushwick Farmers Market at Make the Road
+## 44 Bushwick Farmers Market at Make the Road
+## 45 Bushwick Farmers Market at Make the Road
+## 46 Bushwick Farmers Market at Make the Road
+## 47 Bushwick Farmers Market at Make the Road
+## 48 Bushwick Farmers Market at Make the Road
+## 49                          PS 7 Farm Stand
+##                                                                           Additional_Information
+## 1       Spend $5 in EBT and get a $2 Health Buck coupon.Program Website; http;//www.grownyc.org.
+## 2       Spend $5 in EBT and get a $2 Health Buck coupon.Program Website; http;//www.grownyc.org.
+## 3       Spend $5 in EBT and get a $2 Health Buck coupon.Program Website; http;//www.grownyc.org.
+## 4       Spend $5 in EBT and get a $2 Health Buck coupon.Program Website; http;//www.grownyc.org.
+## 5  Spend $5 in EBT and get a $2 Health Buck coupon.Program Website; http;//www.harvesthomefm.org
+## 6       Spend $5 in EBT and get a $2 Health Buck coupon.Program Website; http;//www.grownyc.org.
+## 7                                                                                               
+## 8                                                                                               
+## 9                                                                                               
+## 10                                                                                              
+## 11                                                                                              
+## 12                                                                                              
+## 13                                                                                              
+## 14                                                                                              
+## 15                                                                                              
+## 16                                                                                              
+## 17                                                                                              
+## 18                                                                                              
+## 19                                                                                              
+## 20                                                                                              
+## 21                                                                                              
+## 22                                                                                              
+## 23                                                                                              
+## 24                                                                                              
+## 25                                                                                              
+## 26                                                                                              
+## 27                                                                                              
+## 28                                                                                              
+## 29                                                                                              
+## 30                                                                                              
+## 31                                                                                              
+## 32                                                                                              
+## 33                                                                                              
+## 34                                                                                              
+## 35                                                                                              
+## 36                                                                                              
+## 37                                                                                              
+## 38                                                                                              
+## 39                                                                                              
+## 40                                                                                              
+## 41                                                                                              
+## 42                                                                                              
+## 43                                                                                              
+## 44                                                                                              
+## 45                                                                                              
+## 46                                                                                              
+## 47                                                                                              
+## 48                                                                                              
+## 49                                                                                              
+##                              Street_Address   Borough State.x Zip_Code
+## 1                           Washington Park  Brooklyn      NY    11205
+## 2  Union Ave bet Driggs Ave  and  N 12th St  Brooklyn      NY    11222
+## 3  Union Ave bet Driggs Ave  and  N 12th St  Brooklyn      NY    11222
+## 4                                   60th St  Brooklyn      NY    11220
+## 5                                W 137th St Manhattan      NY    10031
+## 6                                 143rd St  Manhattan      NY    10031
+## 7                                                          NY       NA
+## 8                                                          NY       NA
+## 9                                                          NY       NA
+## 10                                                         NY       NA
+## 11                                                         NY       NA
+## 12                                                         NY       NA
+## 13                                                         NY       NA
+## 14                                                         NY       NA
+## 15                                                         NY       NA
+## 16                                                         NY       NA
+## 17                                                         NY       NA
+## 18                                                         NY       NA
+## 19                                                         NY       NA
+## 20                                                         NY       NA
+## 21                                                         NY       NA
+## 22                                                         NY       NA
+## 23                                                         NY       NA
+## 24                                                         NY       NA
+## 25                                                         NY       NA
+## 26                                                         NY       NA
+## 27                                                         NY       NA
+## 28                                                         NY       NA
+## 29                                                         NY       NA
+## 30                                                         NY       NA
+## 31                                                         NY       NA
+## 32                                                         NY       NA
+## 33                                                         NY       NA
+## 34                                                         NY       NA
+## 35                                                         NY       NA
+## 36                                                         NY       NA
+## 37                                                         NY       NA
+## 38                                                         NY       NA
+## 39                                                         NY       NA
+## 40                                                         NY       NA
+## 41                                                         NY       NA
+## 42                                                         NY       NA
+## 43                                                         NY       NA
+## 44                                                         NY       NA
+## 45                                                         NY       NA
+## 46                                                         NY       NA
+## 47                                                         NY       NA
+## 48                                                         NY       NA
+## 49                               E 119th St Manhattan      NY    10035
+##    Latitude.x Longitude.x SPDES_Permit_Number
+## 1          41         -74           NY0027073
+## 2          41         -74           NY0267589
+## 3          41         -74           NY0026204
+## 4          41         -74           NY0026166
+## 5          41         -74           NY0026247
+## 6          41         -74           NY0026247
+## 7          41         -74           NY0028401
+## 8          41         -74           NY0263214
+## 9          41         -74           NY0062251
+## 10         41         -74           NY0274038
+## 11         41         -74           NY0262102
+## 12         41         -74           NY0028525
+## 13         41         -74           NY0263087
+## 14         41         -74           NY0269450
+## 15         41         -74           NY0246948
+## 16         41         -74           NY0164933
+## 17         41         -74           NY0242012
+## 18         41         -74           NY0156299
+## 19         41         -74           NY0270610
+## 20         41         -74           NY0263133
+## 21         41         -74           NY0219304
+## 22         41         -74           NY0149411
+## 23         41         -74           NY0257265
+## 24         41         -74           NY0247251
+## 25         41         -74           NY0243493
+## 26         41         -74           NY0271225
+## 27         41         -74           NY0100242
+## 28         41         -74           NY0268437
+## 29         41         -74           NY0030741
+## 30         41         -74           NY0026441
+## 31         41         -74           NY0027774
+## 32         41         -74           NY0021423
+## 33         41         -74           NY0265080
+## 34         41         -74           NY0247197
+## 35         41         -74           NY0263028
+## 36         41         -74           NY0234117
+## 37         41         -74           NY0110795
+## 38         41         -74           NY0162663
+## 39         41         -74           NY0246972
+## 40         41         -74           NY0191825
+## 41         41         -74           NY0233200
+## 42         41         -74           NY0261360
+## 43         41         -74           NY0235776
+## 44         41         -74           NY0029718
+## 45         41         -74           NY0270598
+## 46         41         -74           NY0262676
+## 47         41         -74           NY0231321
+## 48         41         -74           NY0262935
+## 49         41         -74           NY0026131
+##                                        Facility_Name Ground_or_Surface
+## 1                RED HOOK WASTEWATER TREATMENT PLANT           Surface
+## 2           NEWTOWN CREEK WASTEWATER TREATMENT PLANT           Surface
+## 3           NEWTOWN CREEK WASTEWATER TREATMENT PLANT           Surface
+## 4               OWLS HEAD WASTEWATER TREATMENT PLANT           Surface
+## 5             NORTH RIVER WASTEWATER TREATMENT PLANT           Surface
+## 6             NORTH RIVER WASTEWATER TREATMENT PLANT           Surface
+## 7              ALBION JOINT MUNICIPAL INDUSTRIAL STP           Surface
+## 8                 ASHLAND WASTEWATER TREATMENT PLANT           Surface
+## 9             BLOOMING GROVE TAPPAN HOMES SEWER DIST           Surface
+## 10                                   BOICEVILLE WWTP           Surface
+## 11                    CAYUGA AND AURELIUS JOINT WWTP           Surface
+## 12              CAZENOVIA WASTEWATER TREATMENT PLANT           Surface
+## 13                    CENTRAL BRIDGE SEWER DIST WWTP           Surface
+## 14                 CHAUTAUQUA HEIGHTS SEWER DISTRICT           Surface
+## 15          CHEMUNG CO ELMIRA SWR DIST BAKER RD WWTF           Surface
+## 16                               DOVER RIDGE ESTATES           Surface
+## 17            EAST SCHODACK WASTEWATER TREATMENT PLT           Surface
+## 18                    FENTON - T PORTER HOLLOW RD SD           Surface
+## 19                  FOUR CORNERS SEWER DISTRICT WWTP           Surface
+## 20    HAMDEN SEWER DIST WASTEWATER TREAMENT FACILITY            Ground
+## 21                             HIGHLAND LAKE ESTATES           Surface
+## 22                  HIGHLANDS SEWER IMPROVEMENT AREA           Surface
+## 23            HINCKLEY WASTEWATER TREATMENT FACILITY           Surface
+## 24                                     JASPER-T WWTP           Surface
+## 25                  KISSING BRIDGE SEWER DISTRICT #2           Surface
+## 26                                    LAKE ARKIN STP           Surface
+## 27                         LILY DALE SD WWT FACILITY           Surface
+## 28                MARIAVILLE LAKE SEWER DISTRICT # 2           Surface
+## 29                                   MT MORRIS-V STP           Surface
+## 30                      NASSAU CO SD #1 - INWOOD STP           Surface
+## 31            NEWFANE -T- WASTEWATER TREATMENT PLANT           Surface
+## 32            NORWICH - C WASTEWATER TREATMENT PLANT           Surface
+## 33                             PATTERSON HAMLET WWTP           Surface
+## 34 PAVILION (HAMLET) SANITARY SEWAGE DISPOSAL SYSTEM           Surface
+## 35                                   PRATTSVILLE STP           Surface
+## 36                  ROLLING HILLS SEWER DISTRICT STP           Surface
+## 37                       SANFORD - T OQUAGA LAKE STP           Surface
+## 38           SAVANNAH-T WWTP COMBINED SEWER DISTRICT           Surface
+## 39      SENECA COUNTY SEWER DISTRICT #2  -W/ 2 WWTPS           Surface
+## 40                       SOUTH ALBANY SEWER DIST STP           Surface
+## 41              TOWN OF CHENANGO SEWER DISTRICT # 10           Surface
+## 42                                 VALLEY FALLS WWTP           Surface
+## 43                            VILLAGE OF REMSEN WWTF           Surface
+## 44                WAWARSING NAPANOCH SIMPRO AREA STP           Surface
+## 45                      WESTERN RAMAPO ADVANCED WWTP           Surface
+## 46           WEST WINDSOR WASTEWATER TREATMENT PLANT           Surface
+## 47                   WHISPERING OAKS SUBDIVISION STP            Ground
+## 48                WINDHAM WASTEWATER TREATMENT PLANT           Surface
+## 49           WARDS ISLAND WASTEWATER TREATMENT PLANT           Surface
+##    Average_Design_Hydraulic_Flow
+## 1                          60.00
+## 2                         310.00
+## 3                         310.00
+## 4                         120.00
+## 5                         170.00
+## 6                         170.00
+## 7                           2.30
+## 8                           0.03
+## 9                           0.07
+## 10                          0.08
+## 11                          0.13
+## 12                          0.95
+## 13                          0.06
+## 14                          0.06
+## 15                          0.02
+## 16                          0.03
+## 17                          0.01
+## 18                          0.01
+## 19                          0.13
+## 20                          0.03
+## 21                          0.10
+## 22                          0.12
+## 23                          0.01
+## 24                          0.04
+## 25                          0.03
+## 26                          0.01
+## 27                          0.05
+## 28                          0.10
+## 29                          0.86
+## 30                            NA
+## 31                          1.60
+## 32                          2.20
+## 33                          0.08
+## 34                          0.08
+## 35                          0.09
+## 36                            NA
+## 37                          0.05
+## 38                          0.05
+## 39                          0.66
+## 40                          0.01
+## 41                          0.04
+## 42                          0.06
+## 43                          0.05
+## 44                          0.53
+## 45                          1.50
+## 46                          0.11
+## 47                          0.02
+## 48                          0.45
+## 49                        275.00
+##                                                      Street           City
+## 1                                           63 FLUSHING AVE       BROOKLYN
+## 2                                     329-69 GREENPOINT AVE       BROOKLYN
+## 3                                     329-69 GREENPOINT AVE       BROOKLYN
+## 4                                             6700 SHORE RD       BROOKLYN
+## 5                                            725 W 135TH ST       NEW YORK
+## 6                                            725 W 135TH ST       NEW YORK
+## 7                                         14740 DENSMORE ST         GAINES
+## 8                           ALONG ST RTE 23  and  CO RTE 63        ASHLAND
+## 9                                         NORTH DR - W SIDE BLOOMING GROVE
+## 10                                   ST RTE 28 @ ST RTE 28A     BOICEVILLE
+## 11                                                 RIVER RD       AURELIUS
+## 12                 ST RTE 13 NORTH - E SIDE - N OF CLARK ST      CAZENOVIA
+## 13                      662 ST RTE 30A - OPPOSITE S MAIN ST CENTRAL BRIDGE
+## 14                                      ST RTE 430 - W SIDE     SHORELANDS
+## 15                                                 BAKER RD        CHEMUNG
+## 16                                                 STOWE RD        BEEKMAN
+## 17                                               ST RTE 150  EAST SCHODACK
+## 18                                         PORTER HOLLOW RD         FENTON
+## 19                14 BOXWOOD CIR|PHILLIPS RD  and  MOORE RD  EAST FISHKILL
+## 20                 ST RTE 10 - ADJACENT TO LAUNT HOLLOW CRK         HAMDEN
+## 21                                RIDGE RD  and  CO RTE 105       WOODBURY
+## 22                                             MINE DOCK RD      HIGHLANDS
+## 23                                                  MAIN ST        TRENTON
+## 24                                                GRANGE ST         JASPER
+## 25                                        KISSING BRIDGE LN        CONCORD
+## 26                                               LOGTOWN RD     GREENVILLE
+## 27                                 LILY DALE OFF FRISBEE RD    POMFRET (T)
+## 28         ST RTE 159 (MARIAVILLE RD) - S CHUCTANUNDA CREEK     MARIAVILLE
+## 29                                          103 SULLIVAN ST      MT MORRIS
+## 30                                               1 BAY BLVD         INWOOD
+## 31                                           6349 E LAKE RD         OLCOTT
+## 32                        ST RTE 12 - 0.3 MI S OF CITY LINE      NORWICH-T
+## 33 APPROX 2000 FT SE OF INTERSECTION OF RT 311  and  RT 216      PATTERSON
+## 34                  1 WOODROW DR|NEAR ST RTE 63 @ ST RTE 19       PAVILION
+## 35                         ACCESS RD OFF MAPLE AVE|CO RTE 1    PRATTSVILLE
+## 36                                             RIDGEBURY RD      WAWAYANDA
+## 37                                              OQUAGA LAKE        SANFORD
+## 38                                           1564 N MAIN ST        SAVANNH
+## 39           FORMER HILLSIDE  and  5 PTS CORRECTIONAL WWTPS  SENECA COUNTY
+## 40                                               SCOTT BLVD   SOUTH ALBANY
+## 41                          CASTLE CREEK RD @ PENNVIEW APTS       CHENANGO
+## 42           BET BOSTON   and  MAINE RR  and  HOOSICK RIVER   VALLEY FALLS
+## 43                                                MIDDLE RD         REMSEN
+## 44                 PLANK RD - N SIDE - NW OF INSTITUTION RD       NAPANOCH
+## 45                                            137 ST RTE 17       HILLBURN
+## 46                     124 MAIN ST|FAIRVIEW DR  and  RTE 17        WINDSOR
+## 47                                ST RTE 370 @ ASHINGTON DR       LYSANDER
+## 48                     SOUTH ST @ CO RTE 12  and  ST RTE 23        WINDHAM
+## 49                                    WARDS ISLAND - E SIDE       NEW YORK
+##    State.y Country Latitude.y Longitude.y
+## 1       NY     USA      40.70      -73.98
+## 2       NY     USA      40.73      -73.94
+## 3       NY     USA      40.73      -73.94
+## 4       NY     USA      40.64      -74.03
+## 5       NY     USA      40.82      -73.95
+## 6       NY     USA      40.82      -73.95
+## 7       NY     USA      43.25      -78.16
+## 8       NY     USA      42.29      -74.34
+## 9       NY     USA      41.40      -74.19
+## 10      NY     USA      42.00      -74.26
+## 11      NY     USA      42.95      -76.73
+## 12      NY     USA      42.94      -75.84
+## 13      NY     USA      42.71      -74.33
+## 14      NY     USA      42.24      -79.46
+## 15      NY     USA      42.00      -76.62
+## 16      NY     USA      41.62      -73.64
+## 17      NY     USA      42.56      -73.63
+## 18      NY     USA      42.18      -75.77
+## 19      NY     USA      41.58      -73.74
+## 20      NY     USA      42.18      -74.99
+## 21      NY     USA      41.34      -74.13
+## 22      NY     USA      41.32      -73.98
+## 23      NY     USA      43.31      -75.11
+## 24      NY     USA      42.12      -77.50
+## 25      NY     USA      42.59      -78.65
+## 26      NY     USA      41.34      -74.59
+## 27      NY     USA      42.35      -79.32
+## 28      NY     USA      42.83      -74.15
+## 29      NY     USA      42.72      -77.86
+## 30      NY     USA      40.62      -73.74
+## 31      NY     USA      43.34      -78.68
+## 32      NY     USA      42.51      -75.51
+## 33      NY     USA      41.50      -73.61
+## 34      NY     USA      42.87      -78.02
+## 35      NY     USA      42.31      -74.43
+## 36      NY     USA      41.38      -74.41
+## 37      NY     USA      42.01      -75.45
+## 38      NY     USA      43.06      -76.75
+## 39      NY     USA      42.75      -76.85
+## 40      NY     USA      42.55      -73.84
+## 41      NY     USA      42.19      -75.90
+## 42      NY     USA      42.90      -73.56
+## 43      NY     USA      43.32      -75.18
+## 44      NY     USA      41.74      -74.36
+## 45      NY     USA      41.11      -74.16
+## 46      NY     USA      42.09      -75.77
+## 47      NY     USA      43.17      -76.37
+## 48      NY     USA      42.30      -74.27
+## 49      NY     USA      40.78      -73.92
+##                                                                                  Location_1
+## 1                                          63 FLUSHING AVEBROOKLYN, NY 11205(40.70, -73.98)
+## 2                                    329-69 GREENPOINT AVEBROOKLYN, NY 11222(40.73, -73.94)
+## 3                                    329-69 GREENPOINT AVEBROOKLYN, NY 11222(40.73, -73.94)
+## 4                                            6700 SHORE RDBROOKLYN, NY 11220(40.64, -74.03)
+## 5                                           725 W 135TH STNEW YORK, NY 10031(40.82, -73.95)
+## 6                                           725 W 135TH STNEW YORK, NY 10031(40.82, -73.95)
+## 7                                                14740 DENSMORE STGAINES, NY(43.25, -78.16)
+## 8                             ALONG ST RTE 23  and amp; CO RTE 63ASHLAND, NY(42.29, -74.34)
+## 9                                        NORTH DR - W SIDEBLOOMING GROVE, NY(41.40, -74.19)
+## 10                                      ST RTE 28 @ ST RTE 28ABOICEVILLE, NY(42.00, -74.26)
+## 11                                                      RIVER RDAURELIUS, NY(42.95, -76.73)
+## 12                     ST RTE 13 NORTH - E SIDE - N OF CLARK STCAZENOVIA, NY(42.94, -75.84)
+## 13                     662 ST RTE 30A - OPPOSITE S MAIN STCENTRAL BRIDGE, NY(42.71, -74.33)
+## 14                                         ST RTE 430 - W SIDESHORELANDS, NY(42.24, -79.46)
+## 15                                                       BAKER RDCHEMUNG, NY(42.00, -76.62)
+## 16                                                       STOWE RDBEEKMAN, NY(41.62, -73.64)
+## 17                                               ST RTE 150EAST SCHODACK, NY(42.56, -73.63)
+## 18                                                PORTER HOLLOW RDFENTON, NY(42.18, -75.77)
+## 19            14 BOXWOOD CIR|PHILLIPS RD  and amp; MOORE RDEAST FISHKILL, NY(41.58, -73.74)
+## 20                        ST RTE 10 - ADJACENT TO LAUNT HOLLOW CRKHAMDEN, NY(42.18, -74.99)
+## 21                                 RIDGE RD  and amp; CO RTE 105WOODBURY, NY(41.34, -74.13)
+## 22                                                 MINE DOCK RDHIGHLANDS, NY(41.32, -73.98)
+## 23                                                        MAIN STTRENTON, NY(43.31, -75.11)
+## 24                                                       GRANGE STJASPER, NY(42.12, -77.50)
+## 25                                              KISSING BRIDGE LNCONCORD, NY(42.59, -78.65)
+## 26                                                  LOGTOWN RDGREENVILLE, NY(41.34, -74.59)
+## 27                                   LILY DALE OFF FRISBEE RDPOMFRET (T), NY(42.35, -79.32)
+## 28            ST RTE 159 (MARIAVILLE RD) - S CHUCTANUNDA CREEKMARIAVILLE, NY(42.83, -74.15)
+## 29                                              103 SULLIVAN STMT MORRIS, NY(42.72, -77.86)
+## 30                                                      1 BAY BLVDINWOOD, NY(40.62, -73.74)
+## 31                                                  6349 E LAKE RDOLCOTT, NY(43.34, -78.68)
+## 32                            ST RTE 12 - 0.3 MI S OF CITY LINENORWICH-T, NY(42.51, -75.51)
+## 33 APPROX 2000 FT SE OF INTERSECTION OF RT 311  and amp; RT 216PATTERSON, NY(41.50, -73.61)
+## 34                       1 WOODROW DR|NEAR ST RTE 63 @ ST RTE 19PAVILION, NY(42.87, -78.02)
+## 35                           ACCESS RD OFF MAPLE AVE|CO RTE 1PRATTSVILLE, NY(42.31, -74.43)
+## 36                                                 RIDGEBURY RDWAWAYANDA, NY(41.38, -74.41)
+## 37                                                    OQUAGA LAKESANFORD, NY(42.01, -75.45)
+## 38                                                 1564 N MAIN STSAVANNH, NY(43.06, -76.75)
+## 39       FORMER HILLSIDE  and amp; 5 PTS CORRECTIONAL WWTPSSENECA COUNTY, NY(42.75, -76.85)
+## 40                                                SCOTT BLVDSOUTH ALBANY, NY(42.55, -73.84)
+## 41                               CASTLE CREEK RD @ PENNVIEW APTSCHENANGO, NY(42.19, -75.90)
+## 42     BET BOSTON  and amp; MAINE RR  and amp; HOOSICK RIVERVALLEY FALLS, NY(42.90, -73.56)
+## 43                                                       MIDDLE RDREMSEN, NY(43.32, -75.18)
+## 44                      PLANK RD - N SIDE - NW OF INSTITUTION RDNAPANOCH, NY(41.74, -74.36)
+## 45                                                 137 ST RTE 17HILLBURN, NY(41.11, -74.16)
+## 46                       124 MAIN ST|FAIRVIEW DR  and amp; RTE 17WINDSOR, NY(42.09, -75.77)
+## 47                                     ST RTE 370 @ ASHINGTON DRLYSANDER, NY(43.17, -76.37)
+## 48                       SOUTH ST @ CO RTE 12  and amp; ST RTE 23WINDHAM, NY(42.30, -74.27)
+## 49                                   WARDS ISLAND - E SIDENEW YORK, NY 10035(40.78, -73.92)</code></pre>
 </div>
 <div id="how-many-fairs-does-each-region-have" class="section level3">
 <h3>How many fairs does each region have?</h3>
